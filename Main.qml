@@ -1,8 +1,10 @@
 import QtQuick
+import Qml.Image.Merger.Models
+import Project_1
 
 Window {
-    width: 640
-    height: 480
+    width: 1280
+    height: 760
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Image Merger")
 }

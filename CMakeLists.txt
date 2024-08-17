@@ -10,6 +10,12 @@ qt_standard_project_setup()
 
 qt_add_executable(appProject_1
     main.cpp
+    MainManager.cpp
+    MainManager.h
+    ImageModel.cpp
+    ImageModel.h
+    ImageItem.cpp
+    ImageItem.h
 )
 
 qt_add_qml_module(appProject_1
