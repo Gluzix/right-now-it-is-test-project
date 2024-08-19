@@ -11,10 +11,6 @@ class ImageItem : public QObject
 public:
     explicit ImageItem(QObject *parent = nullptr);
 
-    QString alternativeText() const;
-    void setAlternativeText(const QString &newAlternativeText);
-    void resetAlternativeText();
-
     QString name() const;
     void setName(const QString &newName);
     void resetName();
@@ -26,7 +22,6 @@ public:
     QPixmap data() const;
     void setData(const QPixmap &newData);
     void resetData();
-
 
     int id() const;
     void setId(int newId);
@@ -43,12 +38,10 @@ signals:
 private:
     // QByteArray mData;
     QPixmap mData;
-    QString mAlternativeText;
     QString mName;
     QString mPath;
     int mId;
 
-    Q_PROPERTY(QString alternativeText READ alternativeText WRITE setAlternativeText RESET resetAlternativeText NOTIFY alternativeTextChanged FINAL)
     Q_PROPERTY(QString name READ name WRITE setName RESET resetName NOTIFY nameChanged FINAL)
     Q_PROPERTY(QString path READ path WRITE setPath RESET resetPath NOTIFY pathChanged FINAL)
     Q_PROPERTY(QPixmap data READ data WRITE setData RESET resetData NOTIFY dataChanged FINAL)

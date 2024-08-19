@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ImageModel.h>
+#include <ImageReader.h>
 
 #include <QObject>
 #include <QQmlApplicationEngine>
@@ -21,4 +22,5 @@ public:
 private:
     QQmlApplicationEngine mEngine;
     ImageModel mImageModel;
+    ImageReader mImageReader;
 };

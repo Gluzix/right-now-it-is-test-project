@@ -16,6 +16,9 @@ qt_add_executable(appProject_1
     ImageModel.h
     ImageItem.cpp
     ImageItem.h
+    ImageReader.cpp
+    ImageReader.h
+    ImageItemData.h
 )
 
 qt_add_qml_module(appProject_1

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ImageItem.h"
+#include "ImageItemData.h"
 
 #include <QAbstractItemModel>
 
@@ -21,6 +22,9 @@ public:
     int columnCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;
     QHash<int, QByteArray> roleNames() const override;
+
+public slots:
+    void onImageRead(ImageItemData imageItemData);
 
 private:
     std::vector<std::shared_ptr<ImageItem>> mItems;

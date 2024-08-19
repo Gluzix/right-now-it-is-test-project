@@ -10,7 +10,11 @@ void ImageModel::addImageItem(std::shared_ptr<ImageItem> imageItem)
         return;
     }
 
+    beginInsertRows(QModelIndex(), mItems.size(), mItems.size());
+
     mItems.push_back(imageItem);
+
+    endInsertRows();
 }
 
 QModelIndex ImageModel::index(int row, int column, const QModelIndex &parent) const
@@ -52,4 +56,17 @@ QHash<int, QByteArray> ImageModel::roleNames() const
     QHash<int, QByteArray> roles;
     roles[static_cast<int>(Roles::ImageItem)] = "imageItem";
     return roles;
+}
+
+void ImageModel::onImageRead(ImageItemData imageItemData)
+{
+    std::shared_ptr<ImageItem> imageItem = std::make_shared<ImageItem>();
+
+    imageItem->setData(imageItemData.data);
+    imageItem->setName(imageItemData.fileName);
+    imageItem->setPath(imageItemData.filePath);
+    imageItem->setId(mItems.size());
+
+    addImageItem(imageItem);
+    qDebug() << mItems.size();
 }

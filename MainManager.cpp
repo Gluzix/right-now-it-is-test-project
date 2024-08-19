@@ -1,6 +1,9 @@
 #include "MainManager.h"
+
+#include "ImageItemData.h"
+#include "ImageItem.h"
+
 #include <QGuiApplication>
-#include <ImageItem.h>
 
 MainManager::MainManager(QObject *parent)
     : QObject{parent}
@@ -16,11 +19,14 @@ MainManager::MainManager(QObject *parent)
 
     const QUrl url(u"qrc:/Project_1/Main.qml"_qs);
     mEngine.load(url);
+
+    connect(&mImageReader, &ImageReader::imageRead, &mImageModel, &ImageModel::onImageRead);
 }
 
 void MainManager::registerQmlSingletons()
 {
     qmlRegisterSingletonInstance("Qml.Image.Merger.Models", 1, 0, "ImageModel", &mImageModel);
+    qmlRegisterSingletonInstance("Qml.Image.Merger.Helpers", 1, 0, "ImageReader", &mImageReader);
 }
 
 const QQmlApplicationEngine &MainManager::engine()

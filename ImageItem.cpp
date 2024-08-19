@@ -4,24 +4,6 @@ ImageItem::ImageItem(QObject *parent)
     : QObject{parent}
 {}
 
-QString ImageItem::alternativeText() const
-{
-    return mAlternativeText;
-}
-
-void ImageItem::setAlternativeText(const QString &newAlternativeText)
-{
-    if (mAlternativeText == newAlternativeText)
-        return;
-    mAlternativeText = newAlternativeText;
-    emit alternativeTextChanged();
-}
-
-void ImageItem::resetAlternativeText()
-{
-    setAlternativeText({}); // TODO: Adapt to use your actual default value
-}
-
 QString ImageItem::name() const
 {
     return mName;
