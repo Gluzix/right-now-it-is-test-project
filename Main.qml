@@ -2,6 +2,7 @@ import QtQuick
 import Qml.Image.Merger.Models
 import Qml.Image.Merger.Helpers
 import Project_1
+import "."
 
 Window {
     width: 1280
@@ -9,39 +10,14 @@ Window {
     visible: true
     title: qsTr("Image Merger")
 
-    ListView {
-        id: listView
+    Rectangle {
+        id: background
         anchors.fill: parent
-        anchors.margins: 25
-        model: ImageModel
-        delegate: Item {
-            id: modelDelegate
-            width: 200
-            height: 220
-            required property ImageItem imageItem
+        color: "grey"
+    }
 
-            Image {
-                id: delegateImage
-                width:200
-                height: 200
-                fillMode: Image.PreserveAspectFit
-                source: imageItem.path
-            }
-
-            Text {
-                id: delegateText
-                y: delegateImage.height + 5
-                text: imageItem.name
-            }
-
-            MouseArea {
-                id: delegateMouseArea
-                anchors.fill: parent
-                onClicked:  {
-                    console.log(imageItem.path);
-                }
-            }
-        }
+    MainView {
+        id: mainView
     }
 
     DropArea {
