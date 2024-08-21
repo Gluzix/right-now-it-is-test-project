@@ -40,4 +40,14 @@ Window {
             color: "transparent"
         }
     }
+
+    Rectangle {
+        id: panelRectangle
+        anchors.bottom: parent.bottom
+        anchors.margins: 25
+        x: parent.width/2 - (panelRectangle.width/2)
+        width: 400
+        height: 40
+        color: "white"
+    }
 }
