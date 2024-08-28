@@ -1,4 +1,5 @@
 import QtQuick
+import "."
 
 Item {
     id: modelDelegate
@@ -24,6 +25,8 @@ Item {
         anchors.fill: parent
         onClicked:  {
             console.log(imageItem.path);
+            imageDialog.imageSource = imageItem.path;
+            imageDialog.show();
         }
     }
 }

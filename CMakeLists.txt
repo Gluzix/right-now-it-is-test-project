@@ -27,6 +27,7 @@ qt_add_qml_module(appProject_1
     QML_FILES Main.qml
     MainView.qml
     MainViewItem.qml
+    ImageDialog.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

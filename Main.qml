@@ -20,6 +20,10 @@ Window {
         id: mainView
     }
 
+    ImageDialog {
+        id: imageDialog
+    }
+
     DropArea {
         id: dropArea
         anchors.fill:parent
