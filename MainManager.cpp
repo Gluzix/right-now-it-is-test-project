@@ -1,8 +1,5 @@
 #include "MainManager.h"
 
-#include "ImageItemData.h"
-#include "ImageItem.h"
-
 #include <QGuiApplication>
 
 MainManager::MainManager(QObject *parent)

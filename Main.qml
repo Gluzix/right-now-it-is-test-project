@@ -1,4 +1,6 @@
 import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 import Qml.Image.Merger.Models
 import Qml.Image.Merger.Helpers
 import Project_1
@@ -53,5 +55,40 @@ Window {
         width: 400
         height: 40
         color: "white"
+        RowLayout {
+            anchors.fill: parent
+            Button {
+                implicitWidth:40
+                implicitHeight:40
+                id: addImage
+                icon.source: "qrc:/attach-svgrepo-com.svg"
+                icon.width: 40
+                icon.height: 40
+            }
+            // Button {
+            //     width:40
+            //     height:40
+            //     id: removeImages
+            //     icon.source: "qrc://trashcan-svgrepo-com.svg"
+            // }
+            // Button {
+            //     width:40
+            //     height:40
+            //     id: mergeImages
+            //     icon.source: "qrc://video-file-svgrepo-com.svg"
+            // }
+            // Button {
+            //     width:40
+            //     height:40
+            //     id: zoomInMainView
+            //     icon.source: "qrc://zoom-in-svgrepo-com.svg"
+            // }
+            // Button {
+            //     width:40
+            //     height:40
+            //     id: zoomOutMainView
+            //     icon.source: "qrc://zoom-out-svgrepo-com.svg"
+            // }
+        }
     }
 }
