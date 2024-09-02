@@ -1,9 +1,13 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource prefix="/Project_1">
         <file>attach-svgrepo-com.svg</file>
         <file>trashcan-svgrepo-com.svg</file>
         <file>video-file-svgrepo-com.svg</file>
         <file>zoom-in-svgrepo-com.svg</file>
         <file>zoom-out-svgrepo-com.svg</file>
+        <file>Main.qml</file>
+        <file>MainViewItem.qml</file>
+        <file>MainView.qml</file>
+        <file>ImageDialog.qml</file>
     </qresource>
 </RCC>

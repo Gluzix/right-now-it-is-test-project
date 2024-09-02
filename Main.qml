@@ -52,43 +52,43 @@ Window {
         anchors.bottom: parent.bottom
         anchors.margins: 25
         x: parent.width/2 - (panelRectangle.width/2)
-        width: 400
-        height: 40
+        width: 300
+        height: 60
+        radius: 30
         color: "white"
         RowLayout {
+            anchors.margins: 15
             anchors.fill: parent
             Button {
-                implicitWidth:40
-                implicitHeight:40
+                width:40
+                height:40
                 id: addImage
-                icon.source: "qrc:/attach-svgrepo-com.svg"
-                icon.width: 40
-                icon.height: 40
+                icon.source: "attach-svgrepo-com.svg"
             }
-            // Button {
-            //     width:40
-            //     height:40
-            //     id: removeImages
-            //     icon.source: "qrc://trashcan-svgrepo-com.svg"
-            // }
-            // Button {
-            //     width:40
-            //     height:40
-            //     id: mergeImages
-            //     icon.source: "qrc://video-file-svgrepo-com.svg"
-            // }
-            // Button {
-            //     width:40
-            //     height:40
-            //     id: zoomInMainView
-            //     icon.source: "qrc://zoom-in-svgrepo-com.svg"
-            // }
-            // Button {
-            //     width:40
-            //     height:40
-            //     id: zoomOutMainView
-            //     icon.source: "qrc://zoom-out-svgrepo-com.svg"
-            // }
+            Button {
+                width:40
+                height:40
+                id: removeImages
+                icon.source: "trashcan-svgrepo-com.svg"
+            }
+            Button {
+                width:40
+                height:40
+                id: mergeImages
+                icon.source: "video-file-svgrepo-com.svg"
+            }
+            Button {
+                width:40
+                height:40
+                id: zoomInMainView
+                icon.source: "zoom-in-svgrepo-com.svg"
+            }
+            Button {
+                width:40
+                height:40
+                id: zoomOutMainView
+                icon.source: "zoom-out-svgrepo-com.svg"
+            }
         }
     }
 }

@@ -28,7 +28,11 @@ qt_add_qml_module(appProject_1
     MainView.qml
     MainViewItem.qml
     ImageDialog.qml
-    RESOURCES resources.qrc
+    trashcan-svgrepo-com.svg
+    attach-svgrepo-com.svg
+    video-file-svgrepo-com.svg
+    zoom-out-svgrepo-com.svg
+    zoom-in-svgrepo-com.svg
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
