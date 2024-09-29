@@ -19,6 +19,10 @@ qt_add_executable(appProject_1
     ImageReader.cpp
     ImageReader.h
     ImageItemData.h
+    VideoCreator.h
+    VideoCreator.cpp
+    FfmpegHandler.h
+    FfmpegHandler.cpp
 )
 
 qt_add_qml_module(appProject_1
@@ -35,6 +39,18 @@ qt_add_qml_module(appProject_1
     zoom-in-svgrepo-com.svg
 )
 
+find_path(AVCODEC_INCLUDE_DIR libavcodec/avcodec.h)
+find_library(AVCODEC_LIBRARY avcodec)
+
+find_path(AVFORMAT_INCLUDE_DIR libavformat/avformat.h)
+find_library(AVFORMAT_LIBRARY avformat)
+
+find_path(AVUTIL_INCLUDE_DIR libavutil/avutil.h)
+find_library(AVUTIL_LIBRARY avutil)
+
+find_path(AVDEVICE_INCLUDE_DIR libavdevice/avdevice.h)
+find_library(AVDEVICE_LIBRARY avdevice)
+
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
@@ -46,8 +62,11 @@ set_target_properties(appProject_1 PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+target_include_directories(appProject_1 PRIVATE ${AVCODEC_INCLUDE_DIR} ${AVFORMAT_INCLUDE_DIR} ${AVUTIL_INCLUDE_DIR} ${AVDEVICE_INCLUDE_DIR})
+
+
 target_link_libraries(appProject_1
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick ${AVCODEC_LIBRARY} ${AVFORMAT_LIBRARY} ${AVUTIL_LIBRARY} ${AVDEVICE_LIBRARY}
 )
 
 include(GNUInstallDirs)
